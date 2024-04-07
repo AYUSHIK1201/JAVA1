@@ -60,6 +60,14 @@ class Associate{
     String name;
     String technology;
     int experienceInYears;
+
+     public Associate(int id, String name, String technology, int experienceInYears) 
+     {
+        this.id = id;
+        this.name = name;
+        this.technology = technology;
+        this.experienceInYears = experienceInYears;
+    }
     
     public int getId() {
         return id;
@@ -85,12 +93,7 @@ class Associate{
     public void setExp(int experienceInYears) {
         this.experienceInYears = experienceInYears;
     }
-    public Associate(int id, String name, String technology, int experienceInYears) {
-        this.id = id;
-        this.name = name;
-        this.technology = technology;
-        this.experienceInYears = experienceInYears;
-    }
+   
 }
 //==============================================================================================================================================
 //==============================================================================================================================================
