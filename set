@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{ int z=0,ans;
+	string s1,s2,p,q;
+	cin>>s1>>s2;
+	q=s1;
+	set<char>se;
+	set<char>se2;
+	ans=s1.size();
+	for (int i = 0; i<s2.size(); ++i)
+	{
+        se2.insert(s2[i]);
+       
+	}
+	  for (int i = 0; i<s1.size(); ++i)
+	  {   z=0; 
+	  	  for (int j = i; j<s1.size(); ++j)
+	      {  	
+		     if (se2.find(s1[j])!=se2.end() && se.find(s1[j])==se.end())
+		     {
+		        z++;
+		        se.insert(s1[j]);
+		        p=s1.substr(i,j+1);
+		       
+		     }
+		     if(z==se2.size())
+		     {  
+		        if(j-i+1<ans)
+		        {
+		          ans=j-i+1;
+		          p=s1.substr(i,j-i+1);
+		          if(p.size()<q.size())
+		          {
+		            q=p;
+		          }
+		         
+		           
+		        }
+		        se.clear();
+		        break;
+		     }
+	      }
+    }
+     cout<<q<<endl;
+   	
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
