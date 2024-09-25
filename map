@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{   int n,count=0,p=0;
+	string s1,s2;
+	cin>>n>>s1;
+	map<char,int>m;
+	map<char,int>m2;
+
+	for (int i = 0; i<s1.size(); ++i)
+	{
+        if(m.find(s1[i])==m.end() && p<n)
+        {
+        	m.insert({s1[i],1});
+        	cout<<"insert="<<s1[i]<<" "<<endl;
+        	p++;
+        
+        }
+        else if(m.find(s1[i])!=m.end())
+        {
+        	m[s1[i]]--;
+        		cout<<"remove="<<s1[i]<<" "<<endl;
+        	p--;
+        }
+        else if (m.find(s1[i])==m.end() && p==n)
+        {    if(m2.find(s1[i])!=m2.end())
+        	{ m2[s1[i]]--;
+              count++; 
+              cout<<s1[i]<<endl;
+        	}
+        	else 
+        	{
+               m2.insert({s1[i],1});
+        	}
+           	
+        }
+	}
+	cout<<count<<endl;
+	
+	
+}
+
+
